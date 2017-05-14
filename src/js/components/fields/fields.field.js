@@ -11,9 +11,9 @@ Vue.component('field', {
         // field instances aren't components; they're object literals passed to field components
         var fieldData = Cmint.Instance.Fields.List[this.field.name];
 
-        this.field.label = fieldData.label;
+        this.field.label = this.field.label || fieldData.label;
         this.field.type = fieldData.type;
-        this.field.display = fieldData.display;
+        this.field.display = this.field.display || fieldData.display;
         this.field.menu = fieldData.menu || null;
         this.field.choices = fieldData.choices || null;
         this.field.help = fieldData.help || null;
